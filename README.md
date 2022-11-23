@@ -11,10 +11,15 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 ### Requisitos Levantados
 
 * Cadastrar usuário
+* Atualizar usuário
+* Apagar usuário
 * Definir privilégios de usuários (Vendedor e Cliente)
 * Listar usuários
 * Consultar usuário
 * Venda de veículo
 * Cadastrar veículo
+* Deletar veículo
+* Atualizar veículo
 * Listar veículos
 * Consultar veículo
+
