@@ -46,4 +46,5 @@ public class Usuario {
 //
 //    @Column(name = "password", nullable = false)
 //    private String password;
+
 }
