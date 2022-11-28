@@ -1,14 +1,14 @@
-package br.ufpb.concessionaria.models;
+package br.ufpb.concessionaria.dto;
 
-public class Usuario {
+public class UsuarioDTO {
     private Long id;
     private String nome;
     private String cpf;
     private String email;
 
-    public Usuario() {
-
+    public UsuarioDTO() {
     }
+
     public Long getId() {
         return id;
     }
@@ -41,9 +41,13 @@ public class Usuario {
         this.email = email;
     }
 
-    //    @Column(name = "username", nullable = false, unique = true)
-//    private String username;
-//
-//    @Column(name = "password", nullable = false)
-//    private String password;
+    @Override
+    public String toString() {
+        return "UsuarioDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

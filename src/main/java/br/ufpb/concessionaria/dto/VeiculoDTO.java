@@ -1,7 +1,6 @@
-package br.ufpb.concessionaria.models;
+package br.ufpb.concessionaria.dto;
 
-public class Veiculo {
-
+public class VeiculoDTO {
     private Long id;
     private String chassi;
     private String modelo;
@@ -9,8 +8,7 @@ public class Veiculo {
     private String ano;
     private String cor;
 
-    public Veiculo() {
-
+    public VeiculoDTO() {
     }
 
     public Long getId() {
@@ -59,5 +57,17 @@ public class Veiculo {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    @Override
+    public String toString() {
+        return "VeiculoDTO{" +
+                "id=" + id +
+                ", chassi='" + chassi + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", nome='" + nome + '\'' +
+                ", ano='" + ano + '\'' +
+                ", cor='" + cor + '\'' +
+                '}';
     }
 }
