@@ -2,7 +2,7 @@ package br.ufpb.concessionaria.controller;
 
 import br.ufpb.concessionaria.dto.UsuarioDTO;
 import br.ufpb.concessionaria.models.Usuario;
-import br.ufpb.concessionaria.services.UsuarioService;
+import br.ufpb.concessionaria.service.UsuarioService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
