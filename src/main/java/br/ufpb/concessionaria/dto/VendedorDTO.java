@@ -51,14 +51,4 @@ public class VendedorDTO {
         this.salario = salario;
     }
 
-    @Override
-    public String toString() {
-        return "VendedorDTO{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'' +
-                ", salario='" + salario + '\'' +
-                '}';
-    }
 }
