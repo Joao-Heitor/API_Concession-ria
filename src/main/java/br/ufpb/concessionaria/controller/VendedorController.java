@@ -1,8 +1,7 @@
 package br.ufpb.concessionaria.controller;
 
-import br.ufpb.concessionaria.dto.ClienteDTO;
-import br.ufpb.concessionaria.models.Usuario;
-import br.ufpb.concessionaria.service.UsuarioService;
+import br.ufpb.concessionaria.dto.VendedorDTO;
+import br.ufpb.concessionaria.models.Vendedor;
 import br.ufpb.concessionaria.service.VendedorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -21,45 +20,44 @@ public class VendedorController {
         this.modelMapper = modelMapper;
     }
 
-    private ClienteDTO convertToDTO(Usuario usuario){
-        return modelMapper.map(usuario, ClienteDTO.class);
+    private VendedorDTO convertToDTO(Vendedor vendedor){
+        return modelMapper.map(vendedor, VendedorDTO.class);
     }
 
-    private Usuario convertToEntity(ClienteDTO clienteDTO){
-        return modelMapper.map(clienteDTO, Usuario.class);
+    private Vendedor convertToEntity(VendedorDTO vendedorDTO){
+        return modelMapper.map(vendedorDTO, Vendedor.class);
     }
 
     @PostMapping(path = "/vendedor")
-    ClienteDTO createUsuario(@RequestBody ClienteDTO clienteDTO) {
-        Usuario u = convertToEntity(clienteDTO);
-        Usuario salvo = vendedorService.createUsuario(u);
-        return convertToDTO(salvo);
+    VendedorDTO createVendedor(@RequestBody VendedorDTO vendedorDTO) {
+        Vendedor vendedor = convertToEntity(vendedorDTO);
+        Vendedor salved = vendedorService.createVendedor(vendedor);
+        return convertToDTO(salved);
     }
 
     @GetMapping(path = "/vendedores")
-    List<Usuario> listUsuarios() {
-        return vendedorService.listUsuarios();
+    List<Vendedor> listVendedores() {
+        return vendedorService.listVendedores();
     }
 
     @GetMapping("/vendedor/{vendedorId}")
-    public ClienteDTO getUsuario(@PathVariable Long usuarioId) {
-        Usuario usuario = vendedorService.getUsuario(usuarioId);
-        System.out.println(usuario.toString());
-        return convertToDTO(usuario);
+    public VendedorDTO getVendedor(@PathVariable Long vendedorId) {
+        Vendedor vendedor = vendedorService.getVendedor(vendedorId);
+        return convertToDTO(vendedor);
     }
 
 
     @PutMapping("/vendedor/{vendedorId}")
-    public ClienteDTO updateTask(@PathVariable Long usuarioId, @RequestBody ClienteDTO clienteDTO) {
-        Usuario u = convertToEntity(clienteDTO);
-        Usuario usuarioAtualizado = vendedorService.updateUsuario(usuarioId, u);
-        return convertToDTO(usuarioAtualizado);
+    public VendedorDTO updateVendedor(@PathVariable Long vendedorId, @RequestBody VendedorDTO vendedorDTO) {
+        Vendedor vendedor = convertToEntity(vendedorDTO);
+        Vendedor vendedorUpdated = vendedorService.updateVendedor(vendedorId, vendedor);
+        return convertToDTO(vendedorUpdated);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/vendedor/{vendedorId}")
-    public void deleteUsuario(@PathVariable Long usuarioId) {
-        vendedorService.deleteUsuario(usuarioId);
+    public void deleteVendedor(@PathVariable Long vendedorId) {
+        vendedorService.deleteUsuario(vendedorId);
     }
 
 }
