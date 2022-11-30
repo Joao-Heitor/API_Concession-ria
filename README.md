@@ -214,6 +214,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 
 
 
+
 ### Métodos
 Requisições para a API devem seguir os padrões:
 | Método | Descrição |
