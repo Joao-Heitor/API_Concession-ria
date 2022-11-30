@@ -23,57 +23,82 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 * Listar veículos
 * Consultar veículo
 
+### Modelo entidade relacionamento
+![Modelo entidade-relacionamento](Artefatos/Concessionária.png)
+
 ### Rotas da API por Controllers
+
+### Métodos
+Requisições para a API devem seguir os padrões:
+
+| Método | Descrição |
+|---|---|
+| `GET` | Retorna informações de um ou mais registros. |
+| `POST` | Utilizado para criar um novo registro. |
+| `PUT` | Atualiza dados de um registro ou altera sua situação. |
+| `DELETE` | Remove um registro do sistema. |
+
+### Respostas
+
+| Código | Descrição |
+|---|---|
+| `200` | Requisição executada com sucesso (success).|
+| `400` | Erros de validação ou os campos informados não existem no sistema.|
+| `401` | Dados de acesso inválidos.|
+| `404` | Registro pesquisado não encontrado (Not found).|
 
 #### Controller Cliente
 * POST: /api/cliente
-  * body
-  ```
-  {
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
+
+    ```
+    {
+      "CNH": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    }
+    ```
 * GET: /api/clientes
-  ```
-  [{
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  },
-  {
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }]
-  ```
+
+    ```
+    [{
+      "CNH": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    },
+    {
+      "CNH": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    }]
+    ```
 * GET: /api/cliente/{clienteId}"
-  ```
-  {
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
+
+    ```
+    {
+      "CNH": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    }
+    ```
 * PUT: /api/cliente/{clienteId}
-  ```
-  {
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
+
+    ```
+    {
+      "CNH": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    }
+    ```
 * DELETE: /api/cliente/{clienteId}
   ```
   {
@@ -114,17 +139,17 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   }]
   ```
 * GET: /api/vendedor/{vendedorId}
-```
-  {
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
   ```
+    {
+      "salario": "",
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": ""
+    }
+    ```
 * PUT: /api/vendedor/{vendedorId}
-```
+  ```
   {
     "salario": "",
     "id": "",
@@ -134,7 +159,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   }
   ```
 * DELETE: /api/vendedor/{vendedorId}
-```
+  ```
   {
     "salario": "",
     "id": "",
@@ -147,7 +172,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 
 #### Controller Veículo
 * POST: /api/veiculo
-```
+  ```
   {
     "id": "",
     "chassi": "",
@@ -158,7 +183,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   }
   ```
 * GET: /api/veiculos
-```
+  ```
   [{
     "id": "",
     "chassi": "",
@@ -178,7 +203,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   
   ```
 * GET: /api/veiculos/{veiculoId}
-```
+  ```
   {
     "id": "",
     "chassi": "",
@@ -189,7 +214,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   }
   ```
 * PUT: /api/veiculos/{veiculoId}
-```
+  ```
   {
     "id": "",
     "chassi": "",
@@ -200,7 +225,7 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
   }
   ```
 * DELETE: /api/veiculo/{veiculoId}
-```
+  ```
   {
     "id": "",
     "chassi": "",
@@ -215,24 +240,3 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 
 
 
-### Métodos
-Requisições para a API devem seguir os padrões:
-| Método | Descrição |
-|---|---|
-| `GET` | Retorna informações de um ou mais registros. |
-| `POST` | Utilizado para criar um novo registro. |
-| `PUT` | Atualiza dados de um registro ou altera sua situação. |
-| `DELETE` | Remove um registro do sistema. |
-
-### Respostas
-
-| Código | Descrição |
-|---|---|
-| `200` | Requisição executada com sucesso (success).|
-| `400` | Erros de validação ou os campos informados não existem no sistema.|
-| `401` | Dados de acesso inválidos.|
-| `404` | Registro pesquisado não encontrado (Not found).|
-| `405` | Método não implementado.|
-| `410` | Registro pesquisado foi apagado do sistema e não esta mais disponível.|
-| `422` | Dados informados estão fora do escopo definido para o campo.|
-| `429` | Número máximo de requisições atingido. (*aguarde alguns segundos e tente novamente*)|
