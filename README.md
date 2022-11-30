@@ -23,3 +23,9 @@ Desenvolvimento de uma API como projeto final para a disciplina de **Desenvolvim
 * Listar veículos
 * Consultar veículo
 
+### Rotas da API por Controllers
+
+#### Controller Usuário
+* /api/usuario 
+
+#### Controller Veículo

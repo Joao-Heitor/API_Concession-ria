@@ -1,12 +1,14 @@
 package br.ufpb.concessionaria.dto;
 
-public class UsuarioDTO {
+public class VendedorDTO {
     private Long id;
     private String nome;
     private String cpf;
     private String email;
 
-    public UsuarioDTO() {
+    private String salario;
+
+    public VendedorDTO() {
     }
 
     public Long getId() {
@@ -41,13 +43,22 @@ public class UsuarioDTO {
         this.email = email;
     }
 
+    public String getSalario() {
+        return salario;
+    }
+
+    public void setSalario(String salario) {
+        this.salario = salario;
+    }
+
     @Override
     public String toString() {
-        return "UsuarioDTO{" +
+        return "VendedorDTO{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
+                ", salario='" + salario + '\'' +
                 '}';
     }
 }

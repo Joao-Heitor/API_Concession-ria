@@ -1,15 +1,14 @@
-package br.ufpb.concessionaria.models;
+package br.ufpb.concessionaria.dto;
 
-public class Usuario {
+public class ClienteDTO {
     private Long id;
     private String nome;
     private String cpf;
     private String email;
-
-
-    public Usuario() {
-
+    private String cnh;
+    public ClienteDTO() {
     }
+
     public Long getId() {
         return id;
     }
@@ -42,10 +41,22 @@ public class Usuario {
         this.email = email;
     }
 
-    //    @Column(name = "username", nullable = false, unique = true)
-//    private String username;
-//
-//    @Column(name = "password", nullable = false)
-//    private String password;
+    public String getCnh() {
+        return cnh;
+    }
 
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                ", cnh='" + cnh + '\'' +
+                '}';
+    }
 }
