@@ -1,18 +1,31 @@
 package br.ufpb.concessionaria.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tb_usuario")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Usuario_id")
     protected Long id;
+    @Column(name = "nome")
     protected String nome;
+    @Column(name = "cpf")
     protected String cpf;
+    @Column(name = "email")
     protected String email;
 
 
     public Usuario() {
 
     }
+
+
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;

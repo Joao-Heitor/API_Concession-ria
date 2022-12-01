@@ -1,14 +1,27 @@
 package br.ufpb.concessionaria.models;
 
-public class Veiculo {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tb_veiculo")
+public class Veiculo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "veiculo_id")
     private Long id;
+    @Column(name = "chassi")
     private String chassi;
+    @Column(name = "modelo")
     private String modelo;
+    @Column(name = "nome")
     private String nome;
+    @Column(name = "ano")
     private String ano;
+    @Column(name = "cor")
     private String cor;
 
+    @ManyToOne()
+    @JoinColumn(name = "venda_id")
     public Veiculo() {
 
     }
