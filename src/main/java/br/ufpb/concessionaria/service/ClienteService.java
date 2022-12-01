@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClienteService {
 
-    public Cliente createCriente(Cliente cliente){
+    public Cliente createCliente(Cliente cliente){
         return ClienteRepository.;
     }
 

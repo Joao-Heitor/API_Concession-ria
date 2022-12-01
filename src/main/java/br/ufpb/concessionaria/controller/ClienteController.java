@@ -33,7 +33,7 @@ public class ClienteController {
     @PostMapping(path = "/cliente")
     public ClienteDTO createCliente(@RequestBody ClienteDTO clienteDTO) {
         Cliente cliente = (Cliente) convertToEntity(clienteDTO);
-        Cliente salvo = clienteService.createCriente(cliente);
+        Cliente salvo = clienteService.createCliente(cliente);
         return convertToDTO(salvo);
     }
 
@@ -51,7 +51,7 @@ public class ClienteController {
 
 
     @PutMapping("/cliente/{clienteId}")
-    public ClienteDTO updateTask(@PathVariable Long usuarioId, @RequestBody ClienteDTO clienteDTO) {
+    public ClienteDTO updateCliente(@PathVariable Long usuarioId, @RequestBody ClienteDTO clienteDTO) {
         Usuario u = convertToEntity(clienteDTO);
         Usuario usuarioAtualizado = clienteService.updateCliente(usuarioId, u);
         return convertToDTO(usuarioAtualizado);
