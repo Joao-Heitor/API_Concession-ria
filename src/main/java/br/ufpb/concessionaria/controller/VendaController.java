@@ -2,8 +2,6 @@ package br.ufpb.concessionaria.controller;
 
 import br.ufpb.concessionaria.dto.VendaDTO;
 import br.ufpb.concessionaria.models.Venda;
-import br.ufpb.concessionaria.models.Venda;
-import br.ufpb.concessionaria.service.VendaService;
 import br.ufpb.concessionaria.service.VendaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
