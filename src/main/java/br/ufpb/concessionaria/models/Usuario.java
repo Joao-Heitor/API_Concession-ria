@@ -1,10 +1,10 @@
 package br.ufpb.concessionaria.models;
 
 public class Usuario {
-    private Long id;
-    private String nome;
-    private String cpf;
-    private String email;
+    protected Long id;
+    protected String nome;
+    protected String cpf;
+    protected String email;
 
 
     public Usuario() {

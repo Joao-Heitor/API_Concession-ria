@@ -30,8 +30,8 @@ public class VeiculoController {
 
     @PostMapping(path = "/veiculo")
     VeiculoDTO createVeiculo(@RequestBody VeiculoDTO veiculoDTO) {
-        Veiculo u = convertToEntity(veiculoDTO);
-        Veiculo salvo = veiculoService.createVeiculo(u);
+        Veiculo veiculo = convertToEntity(veiculoDTO);
+        Veiculo salvo = veiculoService.createVeiculo(veiculo);
         return convertToDTO(salvo);
     }
 
@@ -50,8 +50,8 @@ public class VeiculoController {
 
     @PutMapping("/veiculos/{veiculoId}")
     public VeiculoDTO updateVeiculo(@PathVariable Long veiculoId, @RequestBody VeiculoDTO veiculoDTO) {
-        Veiculo u = convertToEntity(veiculoDTO);
-        Veiculo veiculoAtualizado = veiculoService.updateVeiculo(veiculoId, u);
+        Veiculo veiculo = convertToEntity(veiculoDTO);
+        Veiculo veiculoAtualizado = veiculoService.updateVeiculo(veiculoId, veiculo);
         return convertToDTO(veiculoAtualizado);
     }
 

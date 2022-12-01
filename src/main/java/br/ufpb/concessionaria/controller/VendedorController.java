@@ -57,7 +57,7 @@ public class VendedorController {
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/vendedor/{vendedorId}")
     public void deleteVendedor(@PathVariable Long vendedorId) {
-        vendedorService.deleteUsuario(vendedorId);
+        vendedorService.deleteVendedor(vendedorId);
     }
 
 }
