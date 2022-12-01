@@ -241,7 +241,6 @@ Requisições para a API devem seguir os padrões:
 * POST: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
   ```
   {
-    "vendaId": "",
     "veiculoId": "",
     "clienteId": "",
     "vendedorId": ""
