@@ -256,8 +256,7 @@ Requisições para a API devem seguir os padrões:
     "clienteId": "",
     "vendedorId": ""
   },
-
-  [{
+  {
   "vendaId": "",
   "veiculoId": "",
   "clienteId": "",
@@ -267,7 +266,7 @@ Requisições para a API devem seguir os padrões:
 
 * GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
   ```
-  [{
+  {
     "vendaId": "",
     "veiculoId": "",
     "clienteId": "",
