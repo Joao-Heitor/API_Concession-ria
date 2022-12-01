@@ -45,11 +45,10 @@ public class VeiculoService {
     }
 
 
-    public Veiculo deleteVeiculo(Long veiculoId){
+    public void deleteVeiculo(Long veiculoId){
         Optional<Veiculo> optionalVeiculo = veiculoRepository.findById(veiculoId);
         if (optionalVeiculo.isPresent()){
             veiculoRepository.deleteById(veiculoId);
         }
-        return null;
     }
 }

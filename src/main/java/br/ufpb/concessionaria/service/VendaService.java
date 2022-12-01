@@ -43,11 +43,10 @@ public class VendaService {
         return null;
     }
 
-    public Venda deleteVenda(Long vendaId){
+    public void deleteVenda(Long vendaId){
         Optional<Venda> optionalVenda = vendaRepository.findById(vendaId);
         if (optionalVenda.isPresent()){
             vendaRepository.deleteById(vendaId);
         }
-        return null;
     }
 }

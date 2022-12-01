@@ -43,11 +43,10 @@ public class ClienteService {
         return null;
     }
 
-    public Cliente deleteCliente(Long clienteId){
+    public void deleteCliente(Long clienteId){
         Optional<Cliente> optionalCliente = clienteRepository.findById(clienteId);
         if (optionalCliente.isPresent()){
             clienteRepository.deleteById(clienteId);
         }
-        return null;
     }
 }
