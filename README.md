@@ -274,7 +274,7 @@ Requisições para a API devem seguir os padrões:
     "vendedorId": ""
   }
   ```
-* GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+* PUT: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
   ```
   {
     "vendaId": "",
@@ -283,7 +283,7 @@ Requisições para a API devem seguir os padrões:
     "vendedorId": ""
   }
   ```
-  * DELETE: api/venda/{vendaId}
+* DELETE: api/venda/{vendaId}
   ```
   {
     "vendaId": "",
