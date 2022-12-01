@@ -237,6 +237,63 @@ Requisições para a API devem seguir os padrões:
   ```
 
 
+#### Controller Venda
+* POST: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  ```
+  {
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  }
+  ```
+
+* GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  ```
+  [{
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  },
+
+  [{
+  "vendaId": "",
+  "veiculoId": "",
+  "clienteId": "",
+  "vendedorId": ""
+  }]
+  ```
+
+* GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  ```
+  [{
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  }
+  ```
+* GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  ```
+  {
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  }
+  ```
+  * DELETE: api/venda/{vendaId}
+  ```
+  {
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  }
+  ```
+
+
 
 
 
