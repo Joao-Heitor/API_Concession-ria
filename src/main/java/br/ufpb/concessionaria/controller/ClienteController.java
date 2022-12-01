@@ -26,8 +26,8 @@ public class ClienteController {
         return modelMapper.map(cliente, ClienteDTO.class);
     }
 
-    private Usuario convertToEntity(ClienteDTO clienteDTO){
-        return modelMapper.map(clienteDTO, Usuario.class);
+    private Cliente convertToEntity(ClienteDTO clienteDTO){
+        return modelMapper.map(clienteDTO, Cliente.class);
     }
 
     @PostMapping(path = "/cliente")
@@ -38,29 +38,28 @@ public class ClienteController {
     }
 
     @GetMapping(path = "/clientes")
-    public List<Usuario> listUsuarios() {
+    public List<Cliente> listClientes() {
         return clienteService.listCliente();
     }
 
     @GetMapping("/cliente/{clienteId}")
-    public ClienteDTO getUsuario(@PathVariable Long usuarioId) {
-        Cliente cliente = clienteService.getCliente(usuarioId);
+    public ClienteDTO getCliente(@PathVariable Long clienteId) {
+        Cliente cliente = clienteService.getCliente(clienteId);
         System.out.println(cliente.toString());
         return convertToDTO(cliente);
     }
 
-
     @PutMapping("/cliente/{clienteId}")
-    public ClienteDTO updateCliente(@PathVariable Long usuarioId, @RequestBody ClienteDTO clienteDTO) {
-        Usuario u = convertToEntity(clienteDTO);
-        Usuario usuarioAtualizado = clienteService.updateCliente(usuarioId, u);
-        return convertToDTO(usuarioAtualizado);
+    public ClienteDTO updateCliente(@PathVariable Long clienteId, @RequestBody ClienteDTO clienteDTO) {
+        Cliente cliente = convertToEntity(clienteDTO);
+        Cliente clienteUpdated = clienteService.updateCliente(clienteId, cliente);
+        return convertToDTO(clienteUpdated);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/cliente/{clienteId}")
-    public void deleteUsuario(@PathVariable Long usuarioId) {
-        clienteService.deleteUsuario(usuarioId);
+    public void deleteCliente(@PathVariable Long clienteId) {
+        clienteService.deleteCliente(clienteId);
     }
 
 }
