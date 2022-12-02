@@ -1,15 +1,30 @@
 package br.ufpb.concessionaria.models;
 
-public class Venda {
-    private Long id;
-    private Cliente clienteId;
-    private Vendedor vendedorId;
-    private Veiculo veiculoId;
+import jakarta.persistence.*;
 
-    public Venda(Cliente clienteId, Vendedor vendedorId, Veiculo veiculoId) {
-        this.clienteId = clienteId;
-        this.vendedorId = vendedorId;
-        this.veiculoId = veiculoId;
+import java.util.Collection;
+
+@Entity
+@Table(name = "tb_vanda")
+public class Venda {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "venda_id")
+    private Long id;
+    @ManyToOne()
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+    @ManyToOne()
+    @JoinColumn(name = "vendendor_id")
+    private Vendedor vendedor;
+    @OneToMany(mappedBy = "veiculoId")
+    @JoinColumn(name = "veiculo_id")
+    private Collection<Veiculo> veiculos;
+
+    public Venda(Cliente cliente, Vendedor vendedor, Collection<Veiculo> veiculos) {
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+        this.veiculos = veiculos;
     }
 
     public Long getId() {
@@ -20,37 +35,37 @@ public class Venda {
         this.id = id;
     }
 
-    public Cliente getClienteId() {
-        return clienteId;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setClienteId(Cliente clienteId) {
-        this.clienteId = clienteId;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Vendedor getVendedorId() {
-        return vendedorId;
+    public Vendedor getVendedor() {
+        return vendedor;
     }
 
-    public void setVendedorId(Vendedor vendedorId) {
-        this.vendedorId = vendedorId;
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
     }
 
-    public Veiculo getVeiculoId() {
-        return veiculoId;
+    public Collection<Veiculo> getVeiculos() {
+        return veiculos;
     }
 
-    public void setVeiculoId(Veiculo veiculoId) {
-        this.veiculoId = veiculoId;
+    public void setVeiculos(Collection<Veiculo> veiculos) {
+        this.veiculos = veiculos;
     }
 
     @Override
     public String toString() {
         return "Venda{" +
                 "id=" + id +
-                ", clienteId=" + clienteId +
-                ", vendedorId=" + vendedorId +
-                ", veiculoId=" + veiculoId +
+                ", cliente=" + cliente +
+                ", vendedor=" + vendedor +
+                ", veiculos=" + veiculos +
                 '}';
     }
 }

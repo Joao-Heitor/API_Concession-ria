@@ -19,9 +19,10 @@ public class Veiculo {
     private String ano;
     @Column(name = "cor")
     private String cor;
-
     @ManyToOne()
-    @JoinColumn(name = "venda_id")
+    @JoinColumn(name = "id")
+    private Venda venda;
+
     public Veiculo() {
 
     }
@@ -72,5 +73,26 @@ public class Veiculo {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "id=" + id +
+                ", chassi='" + chassi + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", nome='" + nome + '\'' +
+                ", ano='" + ano + '\'' +
+                ", cor='" + cor + '\'' +
+                ", venda=" + venda +
+                '}';
     }
 }

@@ -16,11 +16,9 @@ public class Usuario {
     @Column(name = "email")
     protected String email;
 
-
     public Usuario() {
 
     }
-
 
     public Long getId() {
         return id;

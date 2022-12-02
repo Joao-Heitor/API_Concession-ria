@@ -19,7 +19,7 @@ public class VeiculoService {
         return veiculoRepository.save(veiculo);
     }
 
-    public List<Veiculo> listVeiculo(){
+    public List<Veiculo> listVeiculos(){
         return veiculoRepository.findAll();
     }
 

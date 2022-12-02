@@ -34,9 +34,9 @@ public class VendaService {
         Optional<Venda> optionalVenda = vendaRepository.findById(vendaId);
         if (optionalVenda.isPresent()){
             Venda toUpdate = optionalVenda.get();
-            toUpdate.setClienteId(venda.getClienteId());
-            toUpdate.setVendedorId(venda.getVendedorId());
-            toUpdate.setVeiculoId(venda.getVeiculoId());
+            toUpdate.setCliente(venda.getCliente());
+            toUpdate.setVendedor(venda.getVendedor());
+            toUpdate.setVeiculos(venda.getVeiculos());
 
             return toUpdate;
         }
