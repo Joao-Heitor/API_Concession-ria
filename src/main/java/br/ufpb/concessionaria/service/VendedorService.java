@@ -2,10 +2,11 @@ package br.ufpb.concessionaria.service;
 
 import br.ufpb.concessionaria.models.Vendedor;
 import br.ufpb.concessionaria.repository.VendedorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class VendedorService {
     VendedorRepository vendedorRepository;
 
