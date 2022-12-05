@@ -17,14 +17,16 @@ public class Venda {
     @ManyToOne()
     @JoinColumn(name = "vendendor_id")
     private Vendedor vendedor;
-    @OneToMany(mappedBy = "veiculoId")
-    @JoinColumn(name = "veiculo_id")
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private Collection<Veiculo> veiculos;
 
     public Venda(Cliente cliente, Vendedor vendedor, Collection<Veiculo> veiculos) {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.veiculos = veiculos;
+    }
+
+    public Venda() {
     }
 
     public Long getId() {

@@ -2,8 +2,9 @@ package br.ufpb.concessionaria.models;
 
 import javax.persistence.*;
 
-@Entity
+@MappedSuperclass
 @Table(name = "tb_usuario")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

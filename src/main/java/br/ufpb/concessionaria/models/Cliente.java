@@ -6,11 +6,11 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "tb_cliente")
+@PrimaryKeyJoinColumn(name = "clienteId")
 public class Cliente extends Usuario{
     @Column(name = "cnh")
     private String cnh;
     @OneToMany(mappedBy = "id")
-    @JoinColumn(name = "venda_id")
     private Collection<Venda> vendas;
     public Cliente() {
         super();
