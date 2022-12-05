@@ -1,6 +1,6 @@
 package br.ufpb.concessionaria.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.Collection;
 
