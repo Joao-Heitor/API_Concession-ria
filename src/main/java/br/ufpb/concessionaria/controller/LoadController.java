@@ -17,6 +17,8 @@ public class LoadController {
     @GetMapping
     public void carregar() {
         load.carregarCliente();
+        load.carregarVendedor();
+        load.carregarVeiculo();
     }
 
 }
