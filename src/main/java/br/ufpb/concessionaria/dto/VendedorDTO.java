@@ -1,5 +1,7 @@
 package br.ufpb.concessionaria.dto;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -8,6 +10,7 @@ public class VendedorDTO {
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
     @NotBlank(message = "CPF é obrigatório")
+    @CPF(message = "CPF inválido")
     private String cpf;
     @NotBlank(message = "Email é obrigatório")
     @Email

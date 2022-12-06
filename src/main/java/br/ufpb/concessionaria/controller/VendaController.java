@@ -31,7 +31,7 @@ public class VendaController {
 
     @PostMapping(path = "/venda")
     public VendaDTO createVenda(@Valid @RequestBody VendaDTO vendaDTO) {
-        Venda venda = (Venda) convertToEntity(vendaDTO);
+        Venda venda = convertToEntity(vendaDTO);
         Venda salvo = vendaService.createVenda(venda);
         return convertToDTO(salvo);
     }

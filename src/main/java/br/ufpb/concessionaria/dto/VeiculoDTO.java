@@ -15,7 +15,6 @@ public class VeiculoDTO {
     @NotBlank(message = "Cor é obrigatório")
     private String cor;
 
-
     public VeiculoDTO() {
     }
 

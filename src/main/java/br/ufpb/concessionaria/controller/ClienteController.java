@@ -33,7 +33,7 @@ public class ClienteController {
 
     @PostMapping(path = "/cliente")
     public ClienteDTO createCliente(@Valid @RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = (Cliente) convertToEntity(clienteDTO);
+        Cliente cliente = convertToEntity(clienteDTO);
         Cliente salvo = clienteService.createCliente(cliente);
         return convertToDTO(salvo);
     }
