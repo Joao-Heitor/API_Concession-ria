@@ -6,10 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class NomeVeiculosValidator implements ConstraintValidator<NomeVeiculos, String>{
-    private List<String> nomeVeiculos = Arrays.asList(
-            "",
-            ""
-    );
+    private List<String> nomeVeiculos = Arrays.asList("Neo", "T20", "Osiris", "Cara-cara", "ItaliRXS", "Furia", "Astron", "Coquette", "Kuruma", "Comet");
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {

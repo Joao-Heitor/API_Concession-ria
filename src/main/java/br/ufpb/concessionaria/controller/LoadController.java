@@ -20,8 +20,7 @@ public class LoadController {
 
     @GetMapping
     public void carregar(){
-        load.carregar();
-
+        load.carregarCliente();
     }
 
 }

@@ -6,10 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CoresVeiculosValidator implements ConstraintValidator<CoresVeiculos, String> {
-    private List<String> coresVeiculos = Arrays.asList(
-            "",
-            ""
-    );
+    private List<String> coresVeiculos = Arrays.asList("Branca", "Preta", "Prata", "Vermelha", "Azul", "Amarela");
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {

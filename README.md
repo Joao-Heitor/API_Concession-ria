@@ -53,8 +53,6 @@ Requisições para a API devem seguir os padrões:
   * Envio:
     ```
       {
-      
-        
         "nome": "",
         "cpf": "",
         "email": "",
@@ -124,7 +122,8 @@ Requisições para a API devem seguir os padrões:
     }
     ```
   * DELETE: /api/cliente/{clienteId}
-      ```
+  * Envio:
+    ```
     {
       "id": "",
       "nome": "",
@@ -142,7 +141,9 @@ Requisições para a API devem seguir os padrões:
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }
     ```
   * Resposta:
@@ -152,7 +153,9 @@ Requisições para a API devem seguir os padrões:
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }
     ```
   * GET: /api/vendedores
@@ -163,14 +166,18 @@ Requisições para a API devem seguir os padrões:
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     },
     {
       "id": "",
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }]
     ```
   * GET: /api/vendedor/{vendedorId}
@@ -181,7 +188,9 @@ Requisições para a API devem seguir os padrões:
         "nome": "",
         "cpf": "",
         "email": "",
-        "salario": ""
+        "salario":, ""
+      "username":, ""
+      "password": ""
       }
     ```
   * PUT: /api/vendedor/{vendedorId}
@@ -191,7 +200,9 @@ Requisições para a API devem seguir os padrões:
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }
     ```
     * Resposta:
@@ -201,17 +212,22 @@ Requisições para a API devem seguir os padrões:
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }
     ```
   * DELETE: /api/vendedor/{vendedorId}
+    * Envio:
     ```
     {
       "id": "",
       "nome": "",
       "cpf": "",
       "email": "",
-      "salario": ""
+      "salario":, ""
+      "username":, ""
+      "password": ""
     }
     ```
 
@@ -295,6 +311,7 @@ Requisições para a API devem seguir os padrões:
     }
     ```
   * DELETE: /api/veiculo/{veiculoId}
+    * Envio:
     ```
     {
       "id": "",
@@ -373,6 +390,7 @@ Requisições para a API devem seguir os padrões:
   }
   ```
 * DELETE: api/venda/{vendaId}
+  * Envio:
   ```
   {
     "vendaId": "",

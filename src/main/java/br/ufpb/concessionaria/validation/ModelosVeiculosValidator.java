@@ -6,10 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ModelosVeiculosValidator implements ConstraintValidator<ModelosVeiculos, String> {
-    private List<String> modelosVeiculos = Arrays.asList(
-            "",
-            ""
-    );
+    private List<String> modelosVeiculos = Arrays.asList("Hatch", "Sedan", "Pickup", "SUV", "Cabine Dupla");
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {

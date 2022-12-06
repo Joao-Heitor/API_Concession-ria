@@ -63,9 +63,15 @@ public class Load {
 //
 //    }
 
-    public void carregar(){
+    public void carregandoCliente(){
         carregarCliente();
+    }
+
+    public void carregandoVendedor(){
         carregarVendedor();
+    }
+
+    public void carregandoVeiculo(){
         carregarVeiculo();
 
     }
