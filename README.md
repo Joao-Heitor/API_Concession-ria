@@ -235,6 +235,12 @@ Requisições para a API devem seguir os padrões:
 #### Controller Veículo
 * POST: /api/veiculo
   * Envio:
+
+    -Cores aceitas: "Branca", "Preta", "Prata", "Vermelha", "Azul", "Amarela"
+  
+    -Modelos aceitos: "Hatch", "Sedan", "Pickup", "SUV", "Cabine Dupla"
+  
+    -Nomes de veículos aceitos: "Neo", "T20", "Osiris", "Cara-cara", "ItaliRXS", "Furia", "Astron", "Coquette", "Kuruma", "Comet"
     ```
     {
     "chassi": "",
@@ -290,6 +296,11 @@ Requisições para a API devem seguir os padrões:
     ```
   * PUT: /api/veiculos/{veiculoId}
     * Envio:
+      -Cores aceitas: "Branca", "Preta", "Prata", "Vermelha", "Azul", "Amarela"
+
+      -Modelos aceitos: "Hatch", "Sedan", "Pickup", "SUV", "Cabine Dupla"
+
+      -Nomes de veículos aceitos: "Neo", "T20", "Osiris", "Cara-cara", "ItaliRXS", "Furia", "Astron", "Coquette", "Kuruma", "Comet"
     ```
     {
       "chassi": "",
