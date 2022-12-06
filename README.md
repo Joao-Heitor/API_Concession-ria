@@ -48,206 +48,287 @@ Requisições para a API devem seguir os padrões:
 | `404` | Registro pesquisado não encontrado (Not found).|
 
 #### Controller Cliente
+
 * POST: /api/cliente
+  * Envio:
+    ```
+      {
+      
+        
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "cnh": ""
+      }
+    ```
+  * Resposta:
 
-    ```
-    {
-      "CNH": "",
-      "id": "",
-      "nome": "",
-      "cpf": "",
-      "email": ""
-    }
-    ```
+      ```
+      {
+        "id": "",
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "cnh": ""
+      }
+      ```
+
+
 * GET: /api/clientes
-
+  * Resposta:
     ```
-    [{
-      "CNH": "",
-      "id": "",
-      "nome": "",
-      "cpf": "",
-      "email": ""
-    },
-    {
-      "CNH": "",
-      "id": "",
-      "nome": "",
-      "cpf": "",
-      "email": ""
-    }]
+      [{
+        "id": "",
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "cnh": ""
+      },
+      { 
+        "id": "",
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "cnh": ""
+      }]
     ```
 * GET: /api/cliente/{clienteId}"
-
+  * Resposta:
     ```
     {
-      "CNH": "",
       "id": "",
       "nome": "",
       "cpf": "",
-      "email": ""
+      "email":"",
+      "cnh": ""
     }
     ```
 * PUT: /api/cliente/{clienteId}
-
+  * Envio:
     ```
     {
-      "CNH": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "cnh": ""    
+    }
+    ```
+  * Resposta:
+    ```
+    {
       "id": "",
       "nome": "",
       "cpf": "",
-      "email": ""
+      "email": "",
+      "cnh": ""
     }
     ```
-* DELETE: /api/cliente/{clienteId}
-  ```
-  {
-    "CNH": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
+  * DELETE: /api/cliente/{clienteId}
+      ```
+    {
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "cnh": ""
+    }
+    ```
 
 #### Controller Vendedor
 * POST: /api/vendedor
-  ```
-  {
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
-* GET: /api/vendedores
-  ```
-  [{
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  },
-  {
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }]
-  ```
-* GET: /api/vendedor/{vendedorId}
-  ```
+  * Envio:
+    ```
     {
-      "salario": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    }
+    ```
+  * Resposta:
+    ```
+    {
       "id": "",
       "nome": "",
       "cpf": "",
-      "email": ""
+      "email": "",
+      "salario": ""
     }
     ```
-* PUT: /api/vendedor/{vendedorId}
-  ```
-  {
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
-* DELETE: /api/vendedor/{vendedorId}
-  ```
-  {
-    "salario": "",
-    "id": "",
-    "nome": "",
-    "cpf": "",
-    "email": ""
-  }
-  ```
+  * GET: /api/vendedores
+    * Resposta:
+    ```
+    [{
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    },
+    {
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    }]
+    ```
+  * GET: /api/vendedor/{vendedorId}
+    * Resposta:
+    ```
+      {
+        "id": "",
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "salario": ""
+      }
+    ```
+  * PUT: /api/vendedor/{vendedorId}
+    * Envio:
+    ```
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    }
+    ```
+    * Resposta:
+    ```
+    {
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    }
+    ```
+  * DELETE: /api/vendedor/{vendedorId}
+    ```
+    {
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "salario": ""
+    }
+    ```
 
 
 #### Controller Veículo
 * POST: /api/veiculo
-  ```
-  {
+  * Envio:
+    ```
+    {
+    "chassi": "",
+    "modelo": "",
+    "nome": "",
+    "ano": "",
+    "cor": ""
+    }
+    ```
+  * Resposta:
+    ```
+    {
     "id": "",
     "chassi": "",
     "modelo": "",
     "nome": "",
     "ano": "",
     "cor": ""
-  }
-  ```
-* GET: /api/veiculos
-  ```
-  [{
-    "id": "",
-    "chassi": "",
-    "modelo": "",
-    "nome": "",
-    "ano": "",
-    "cor": ""
-  },
-  {
-    "id": "",
-    "chassi": "",
-    "modelo": "",
-    "nome": "",
-    "ano": "",
-    "cor": ""
-  }]
+    }
+    ```
+  * GET: /api/veiculos
+    * Resposta:
+    ```
+    [{
+      "id": "",
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    },
+    {
+      "id": "",
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    }]
   
-  ```
-* GET: /api/veiculos/{veiculoId}
-  ```
-  {
-    "id": "",
-    "chassi": "",
-    "modelo": "",
-    "nome": "",
-    "ano": "",
-    "cor": ""
-  }
-  ```
-* PUT: /api/veiculos/{veiculoId}
-  ```
-  {
-    "id": "",
-    "chassi": "",
-    "modelo": "",
-    "nome": "",
-    "ano": "",
-    "cor": ""
-  }
-  ```
-* DELETE: /api/veiculo/{veiculoId}
-  ```
-  {
-    "id": "",
-    "chassi": "",
-    "modelo": "",
-    "nome": "",
-    "ano": "",
-    "cor": ""
-  }
-  ```
+    ```
+  * GET: /api/veiculos/{veiculoId}
+    * Resposta:
+    ```
+    {
+      "id": "",
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    }
+    ```
+  * PUT: /api/veiculos/{veiculoId}
+    * Envio:
+    ```
+    {
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    }
+    ```
+    * Resposta:
+    ```
+    {
+      "id": "",
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    }
+    ```
+  * DELETE: /api/veiculo/{veiculoId}
+    ```
+    {
+      "id": "",
+      "chassi": "",
+      "modelo": "",
+      "nome": "",
+      "ano": "",
+      "cor": ""
+    }
+    ```
 
 
 #### Controller Venda
-* POST: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
-  ```
-  {
+  * POST: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+    * Envio:
+    ```
+    {
+      "veiculoId": "",
+      "clienteId": "",
+      "vendedorId": ""
+    }
+    ```
+    * Resposta:
+    ```
+    {
+    "vendaId": "",
     "veiculoId": "",
     "clienteId": "",
     "vendedorId": ""
-  }
-  ```
+    }
+    ```
 
 * GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  * Resposta: 
   ```
   [{
     "vendaId": "",
@@ -256,14 +337,15 @@ Requisições para a API devem seguir os padrões:
     "vendedorId": ""
   },
   {
-  "vendaId": "",
-  "veiculoId": "",
-  "clienteId": "",
-  "vendedorId": ""
+    "vendaId": "",
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
   }]
   ```
 
 * GET: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  * Resposta:
   ```
   {
     "vendaId": "",
@@ -273,6 +355,15 @@ Requisições para a API devem seguir os padrões:
   }
   ```
 * PUT: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
+  * Envio:
+  ```
+  {
+    "veiculoId": "",
+    "clienteId": "",
+    "vendedorId": ""
+  }
+  ```
+  * Resposta:
   ```
   {
     "vendaId": "",

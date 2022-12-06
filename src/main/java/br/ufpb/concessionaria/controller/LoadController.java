@@ -15,6 +15,9 @@ import br.ufpb.concessionaria.load.Load;
 public class LoadController {
     Load load;
 
+    public LoadController() {
+    }
+
     @GetMapping
     public void carregar(){
         load.carregar();
