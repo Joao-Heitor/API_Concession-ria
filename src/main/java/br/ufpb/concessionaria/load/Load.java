@@ -4,7 +4,6 @@ import br.ufpb.concessionaria.models.*;
 
 import br.ufpb.concessionaria.repository.ClienteRepository;
 import br.ufpb.concessionaria.repository.VeiculoRepository;
-import br.ufpb.concessionaria.repository.VendaRepository;
 import br.ufpb.concessionaria.repository.VendedorRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,33 +12,29 @@ public class Load {
 
 
     VeiculoRepository veiculoRepository;
-
-    VendaRepository vendaRepository;
-
     VendedorRepository vendedorRepository;
     ClienteRepository clienteRepository;
 
 
 
     public void carregarCliente(){
-        Usuario usuario = new Usuario();
         Cliente cliente = new Cliente();
 
-        usuario.setNome("Exemplo da Silva");
-        usuario.setCpf("399-498-628-39");
-        usuario.setEmail("exemplo@gmail.com");
+        cliente.setNome("Exemplo da Silva");
+        cliente.setCpf("399-498-628-39");
+        cliente.setEmail("exemplo@gmail.com");
         cliente.setCnh("0123456789");
         clienteRepository.save(cliente);
 
     }
 
     public void carregarVendedor(){
-        Usuario usuario = new Usuario();
+        Cliente cliente = new Cliente();
         Vendedor vendedor = new Vendedor();
 
-        usuario.setNome("Exemplo da Silva");
-        usuario.setCpf("399-498-628-39");
-        usuario.setEmail("exemplo@gmail.com");
+        cliente.setNome("Exemplo da Silva");
+        cliente.setCpf("399-498-628-39");
+        cliente.setEmail("exemplo@gmail.com");
         vendedor.setSalario("0123456789");
         vendedorRepository.save(vendedor);
 
@@ -70,7 +65,11 @@ public class Load {
 //    }
 
 
-
+    public void Load(VeiculoRepository veiculoRepository, VendedorRepository vendedorRepository, ClienteRepository clienteRepository) {
+        this.veiculoRepository = veiculoRepository;
+        this.vendedorRepository = vendedorRepository;
+        this.clienteRepository = clienteRepository;
+    }
 
     public void carregar(){
         carregarCliente();
