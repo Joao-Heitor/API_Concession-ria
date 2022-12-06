@@ -16,10 +16,29 @@ public class VendedorDTO {
     @Email
     private String email;
     @NotBlank(message = "Salario é obrigatório")
-
+    @NotBlank
     private String salario;
-
+    @NotBlank
+    private String username;
+    @NotBlank
+    private String password;
     public VendedorDTO() {
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Long getId() {

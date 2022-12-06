@@ -25,7 +25,6 @@ public class Usuario {
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -53,11 +52,5 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    //    @Column(name = "username", nullable = false, unique = true)
-//    private String username;
-//
-//    @Column(name = "password", nullable = false)
-//    private String password;
 
 }

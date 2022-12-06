@@ -17,6 +17,7 @@ public class ClienteDTO {
     private String email;
     @NotBlank(message = "CNH é obrigatório")
     private String cnh;
+
     public ClienteDTO() {
     }
 

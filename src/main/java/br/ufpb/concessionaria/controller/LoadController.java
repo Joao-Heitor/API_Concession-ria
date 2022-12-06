@@ -13,7 +13,7 @@ import br.ufpb.concessionaria.load.Load;
 @RestController
 @RequestMapping("/load")
 public class LoadController {
-    Load load;
+    private Load load;
 
     public LoadController() {
     }
