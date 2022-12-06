@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,7 @@ public class VeiculoController {
     }
 
     @PostMapping(path = "/veiculo")
-    VeiculoDTO createVeiculo(@RequestBody VeiculoDTO veiculoDTO) {
+    VeiculoDTO createVeiculo(@Valid @RequestBody VeiculoDTO veiculoDTO) {
         Veiculo veiculo = convertToEntity(veiculoDTO);
         Veiculo salvo = veiculoService.createVeiculo(veiculo);
         return convertToDTO(salvo);
@@ -41,7 +42,7 @@ public class VeiculoController {
     }
 
     @GetMapping("/veiculos/{veiculoId}")
-    public VeiculoDTO getVeiculo(@PathVariable Long veiculoId) {
+    public VeiculoDTO getVeiculo(@Valid @PathVariable Long veiculoId) {
         Veiculo veiculo = veiculoService.getVeiculo(veiculoId);
         System.out.println(veiculo.toString());
         return convertToDTO(veiculo);
@@ -49,7 +50,7 @@ public class VeiculoController {
 
 
     @PutMapping("/veiculos/{veiculoId}")
-    public VeiculoDTO updateVeiculo(@PathVariable Long veiculoId, @RequestBody VeiculoDTO veiculoDTO) {
+    public VeiculoDTO updateVeiculo(@Valid @PathVariable Long veiculoId, @RequestBody VeiculoDTO veiculoDTO) {
         Veiculo veiculo = convertToEntity(veiculoDTO);
         Veiculo veiculoAtualizado = veiculoService.updateVeiculo(veiculoId, veiculo);
         return convertToDTO(veiculoAtualizado);
@@ -57,7 +58,7 @@ public class VeiculoController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/veiculo/{veiculoId}")
-    public void deleteVeiculo(@PathVariable Long veiculoId) {
+    public void deleteVeiculo(@Valid @PathVariable Long veiculoId) {
         veiculoService.deleteVeiculo(veiculoId);
     }
 

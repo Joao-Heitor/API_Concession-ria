@@ -5,10 +5,13 @@ import br.ufpb.concessionaria.models.Cliente;
 import br.ufpb.concessionaria.service.ClienteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
+@Validated
 @RestController
 @RequestMapping(path = "/api")
 public class ClienteController {
@@ -29,7 +32,7 @@ public class ClienteController {
     }
 
     @PostMapping(path = "/cliente")
-    public ClienteDTO createCliente(@RequestBody ClienteDTO clienteDTO) {
+    public ClienteDTO createCliente(@Valid @RequestBody ClienteDTO clienteDTO) {
         Cliente cliente = (Cliente) convertToEntity(clienteDTO);
         Cliente salvo = clienteService.createCliente(cliente);
         return convertToDTO(salvo);
@@ -41,14 +44,14 @@ public class ClienteController {
     }
 
     @GetMapping("/cliente/{clienteId}")
-    public ClienteDTO getCliente(@PathVariable Long clienteId) {
+    public ClienteDTO getCliente(@Valid @PathVariable Long clienteId) {
         Cliente cliente = clienteService.getCliente(clienteId);
         System.out.println(cliente.toString());
         return convertToDTO(cliente);
     }
 
     @PutMapping("/cliente/{clienteId}")
-    public ClienteDTO updateCliente(@PathVariable Long clienteId, @RequestBody ClienteDTO clienteDTO) {
+    public ClienteDTO updateCliente(@Valid @PathVariable Long clienteId, @RequestBody ClienteDTO clienteDTO) {
         Cliente cliente = convertToEntity(clienteDTO);
         Cliente clienteUpdated = clienteService.updateCliente(clienteId, cliente);
         return convertToDTO(clienteUpdated);
@@ -56,7 +59,7 @@ public class ClienteController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/cliente/{clienteId}")
-    public void deleteCliente(@PathVariable Long clienteId) {
+    public void deleteCliente(@Valid @PathVariable Long clienteId) {
         clienteService.deleteCliente(clienteId);
     }
 

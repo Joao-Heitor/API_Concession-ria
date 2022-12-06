@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,7 @@ public class VendaController {
     }
 
     @PostMapping(path = "/venda")
-    public VendaDTO createVenda(@RequestBody VendaDTO vendaDTO) {
+    public VendaDTO createVenda(@Valid @RequestBody VendaDTO vendaDTO) {
         Venda venda = (Venda) convertToEntity(vendaDTO);
         Venda salvo = vendaService.createVenda(venda);
         return convertToDTO(salvo);
@@ -41,7 +42,7 @@ public class VendaController {
     }
 
     @GetMapping("/venda/{vendaId}")
-    public VendaDTO getVenda(@PathVariable Long vendaId) {
+    public VendaDTO getVenda(@Valid @PathVariable Long vendaId) {
         Venda venda = vendaService.getVenda(vendaId);
         System.out.println(venda.toString());
         return convertToDTO(venda);
@@ -49,7 +50,7 @@ public class VendaController {
 
 
     @PutMapping("/venda/{vendaId}")
-    public VendaDTO updateVenda(@PathVariable Long vendaId, @RequestBody VendaDTO vendaDTO) {
+    public VendaDTO updateVenda(@Valid @PathVariable Long vendaId, @RequestBody VendaDTO vendaDTO) {
         Venda u = convertToEntity(vendaDTO);
         Venda vendaAtualizado = vendaService.updateVenda(vendaId, u);
         return convertToDTO(vendaAtualizado);
@@ -57,7 +58,7 @@ public class VendaController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/venda/{vendaId}")
-    public void deleteVenda(@PathVariable Long vendaId) {
+    public void deleteVenda(@Valid @PathVariable Long vendaId) {
         vendaService.deleteVenda(vendaId);
     }
 

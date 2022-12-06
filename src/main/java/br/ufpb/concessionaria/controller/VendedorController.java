@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,7 @@ public class VendedorController {
     }
 
     @PostMapping(path = "/vendedor")
-    VendedorDTO createVendedor(@RequestBody VendedorDTO vendedorDTO) {
+    VendedorDTO createVendedor(@Valid @RequestBody VendedorDTO vendedorDTO) {
         Vendedor vendedor = convertToEntity(vendedorDTO);
         Vendedor salved = vendedorService.createVendedor(vendedor);
         return convertToDTO(salved);
@@ -41,14 +42,14 @@ public class VendedorController {
     }
 
     @GetMapping("/vendedor/{vendedorId}")
-    public VendedorDTO getVendedor(@PathVariable Long vendedorId) {
+    public VendedorDTO getVendedor(@Valid @PathVariable Long vendedorId) {
         Vendedor vendedor = vendedorService.getVendedor(vendedorId);
         return convertToDTO(vendedor);
     }
 
 
     @PutMapping("/vendedor/{vendedorId}")
-    public VendedorDTO updateVendedor(@PathVariable Long vendedorId, @RequestBody VendedorDTO vendedorDTO) {
+    public VendedorDTO updateVendedor(@Valid @PathVariable Long vendedorId, @RequestBody VendedorDTO vendedorDTO) {
         Vendedor vendedor = convertToEntity(vendedorDTO);
         Vendedor vendedorUpdated = vendedorService.updateVendedor(vendedorId, vendedor);
         return convertToDTO(vendedorUpdated);
@@ -56,7 +57,7 @@ public class VendedorController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/vendedor/{vendedorId}")
-    public void deleteVendedor(@PathVariable Long vendedorId) {
+    public void deleteVendedor(@Valid @PathVariable Long vendedorId) {
         vendedorService.deleteVendedor(vendedorId);
     }
 
