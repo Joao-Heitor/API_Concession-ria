@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class Load {
 
-
     VeiculoRepository veiculoRepository;
     VendedorRepository vendedorRepository;
     ClienteRepository clienteRepository;
 
-
+    public Load() {
+    }
 
     public void carregarCliente(){
         Cliente cliente = new Cliente();
@@ -29,12 +29,11 @@ public class Load {
     }
 
     public void carregarVendedor(){
-        Cliente cliente = new Cliente();
         Vendedor vendedor = new Vendedor();
 
-        cliente.setNome("Exemplo da Silva");
-        cliente.setCpf("399-498-628-39");
-        cliente.setEmail("exemplo@gmail.com");
+        vendedor.setNome("Exemplo da Silva");
+        vendedor.setCpf("399-498-628-39");
+        vendedor.setEmail("exemplo@gmail.com");
         vendedor.setSalario("0123456789");
         vendedorRepository.save(vendedor);
 
@@ -63,13 +62,6 @@ public class Load {
 //        veiculoRepository.save(veiculo);
 //
 //    }
-
-
-    public void Load(VeiculoRepository veiculoRepository, VendedorRepository vendedorRepository, ClienteRepository clienteRepository) {
-        this.veiculoRepository = veiculoRepository;
-        this.vendedorRepository = vendedorRepository;
-        this.clienteRepository = clienteRepository;
-    }
 
     public void carregar(){
         carregarCliente();
