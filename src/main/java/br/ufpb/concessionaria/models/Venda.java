@@ -1,5 +1,7 @@
 package br.ufpb.concessionaria.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 import java.util.Collection;
@@ -17,6 +19,7 @@ public class Venda {
     @ManyToOne()
     @JoinColumn(name = "vendendor_id")
     private Vendedor vendedor;
+    @JsonIgnore
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private Collection<Veiculo> veiculos;
 

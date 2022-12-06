@@ -4,10 +4,15 @@ import br.ufpb.concessionaria.models.Cliente;
 import br.ufpb.concessionaria.models.Veiculo;
 import br.ufpb.concessionaria.models.Vendedor;
 
+import javax.validation.constraints.NotBlank;
+
 public class VendaDTO {
     private Long id;
+    @NotBlank(message = "ID Cliente é obrigatório")
     private Cliente clienteId;
+    @NotBlank(message = "ID Vendedor é obrigatório")
     private Vendedor vendedorId;
+    @NotBlank(message = "ID Veiculo é obrigatório")
     private Veiculo veiculoId;
 
     public VendaDTO() {

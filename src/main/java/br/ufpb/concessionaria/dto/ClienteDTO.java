@@ -1,10 +1,18 @@
 package br.ufpb.concessionaria.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class ClienteDTO {
     private Long id;
+    @NotBlank(message = "Nome é obrigatório!")
     private String nome;
+    @NotBlank(message = "CPF é obrigatório")
     private String cpf;
+    @NotBlank(message = "E-mail é obrigatório")
+    @Email
     private String email;
+    @NotBlank(message = "CNH é obrigatório")
     private String cnh;
     public ClienteDTO() {
     }

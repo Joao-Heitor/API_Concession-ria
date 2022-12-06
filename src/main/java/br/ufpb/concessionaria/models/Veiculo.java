@@ -19,8 +19,8 @@ public class Veiculo {
     private String ano;
     @Column(name = "cor")
     private String cor;
-    @ManyToOne()
-    @JoinColumn(name = "id")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "venda_id")
     private Venda venda;
 
     public Veiculo() {
