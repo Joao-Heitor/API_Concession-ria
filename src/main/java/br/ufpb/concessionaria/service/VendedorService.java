@@ -1,5 +1,6 @@
 package br.ufpb.concessionaria.service;
 
+import br.ufpb.concessionaria.exception.ItemNotFoundException;
 import br.ufpb.concessionaria.models.Vendedor;
 import br.ufpb.concessionaria.repository.VendedorRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,7 +31,9 @@ public class VendedorService {
         if (optionalVendedor.isPresent()){
             return vendedorRepository.getReferenceById(vendedorId);
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Vendedor " + vendedorId + " Não existe!");
+        }
     }
 
     public Vendedor updateVendedor(Long vendedorId, Vendedor vendedor){
@@ -43,13 +46,18 @@ public class VendedorService {
             toUpdate.getSalario();
             return toUpdate;
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Vendedor " + vendedorId + " Não existe!");
+        }
     }
 
     public void deleteVendedor(Long vendedorId){
         Optional<Vendedor> optionalVendedor = vendedorRepository.findById(vendedorId);
         if (optionalVendedor.isPresent()){
             vendedorRepository.deleteById(vendedorId);
+        }
+        else {
+            throw new ItemNotFoundException("Vendedor " + vendedorId + " Não existe!");
         }
     }
 }

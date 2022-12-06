@@ -14,13 +14,14 @@ public class Load {
     VendedorRepository vendedorRepository;
     ClienteRepository clienteRepository;
 
-    public Load() {
+    public Load(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
     }
 
     public void carregarCliente(){
         Cliente cliente = new Cliente();
 
-        cliente.setNome("Exemplo da Silva");
+        cliente.setNome("Exemplo");
         cliente.setCpf("399-498-628-39");
         cliente.setEmail("exemplo@gmail.com");
         cliente.setCnh("0123456789");

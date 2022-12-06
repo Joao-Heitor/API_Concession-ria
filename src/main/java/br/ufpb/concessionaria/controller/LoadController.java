@@ -1,25 +1,21 @@
 package br.ufpb.concessionaria.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import br.ufpb.concessionaria.load.Load;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.ufpb.concessionaria.load.Load;
-
-
-
-@CrossOrigin("*")
 @RestController
 @RequestMapping("/load")
 public class LoadController {
-    private Load load;
+    private final Load load;
 
-    public LoadController() {
+    public LoadController(Load load) {
+        this.load = load;
     }
 
     @GetMapping
-    public void carregar(){
+    public void carregar() {
         load.carregarCliente();
     }
 

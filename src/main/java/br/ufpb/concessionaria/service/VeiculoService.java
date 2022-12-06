@@ -1,9 +1,12 @@
 package br.ufpb.concessionaria.service;
 
+import br.ufpb.concessionaria.exception.ItemNotFoundException;
 import br.ufpb.concessionaria.models.Veiculo;
+import br.ufpb.concessionaria.models.Venda;
 import br.ufpb.concessionaria.repository.VeiculoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +31,9 @@ public class VeiculoService {
         if (optionalVeiculo.isPresent()){
             return veiculoRepository.getReferenceById(veiculoId);
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Veículo " + veiculoId + " Não existe!");
+        }
     }
     public Veiculo updateVeiculo(Long veiculoId, Veiculo veiculo){
         Optional<Veiculo> optionalVeiculo = veiculoRepository.findById(veiculoId);
@@ -41,7 +46,9 @@ public class VeiculoService {
             toUpdate.setCor(veiculo.getCor());
             return toUpdate;
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Veículo " + veiculoId + " Não existe!");
+        }
     }
 
 
@@ -49,6 +56,9 @@ public class VeiculoService {
         Optional<Veiculo> optionalVeiculo = veiculoRepository.findById(veiculoId);
         if (optionalVeiculo.isPresent()){
             veiculoRepository.deleteById(veiculoId);
+        }
+        else {
+            throw new ItemNotFoundException("Veículo " + veiculoId + " Não existe!");
         }
     }
 }

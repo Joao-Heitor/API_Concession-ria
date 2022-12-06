@@ -1,9 +1,12 @@
 package br.ufpb.concessionaria.service;
 
+import br.ufpb.concessionaria.exception.ItemNotFoundException;
+import br.ufpb.concessionaria.models.Veiculo;
 import br.ufpb.concessionaria.models.Venda;
 import br.ufpb.concessionaria.repository.VendaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +31,9 @@ public class VendaService {
         if (optionalVenda.isPresent()){
             return vendaRepository.getReferenceById(vendaId);
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Venda " + vendaId + " Não existe!");
+        }
     }
     public Venda updateVenda(Long vendaId, Venda venda){
         Optional<Venda> optionalVenda = vendaRepository.findById(vendaId);
@@ -40,13 +45,20 @@ public class VendaService {
 
             return toUpdate;
         }
-        return null;
+        else {
+            throw new ItemNotFoundException("Venda " + vendaId + " Não existe!");
+        }
     }
 
     public void deleteVenda(Long vendaId){
         Optional<Venda> optionalVenda = vendaRepository.findById(vendaId);
         if (optionalVenda.isPresent()){
+            Collection<Veiculo> veiculos = optionalVenda.get().getVeiculos();
+            veiculos.stream().forEach(veiculo -> veiculos.remove(veiculo));
             vendaRepository.deleteById(vendaId);
+        }
+        else {
+            throw new ItemNotFoundException("Venda " + vendaId + " Não existe!");
         }
     }
 }

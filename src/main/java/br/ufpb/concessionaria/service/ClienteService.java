@@ -1,5 +1,6 @@
 package br.ufpb.concessionaria.service;
 
+import br.ufpb.concessionaria.exception.ItemNotFoundException;
 import br.ufpb.concessionaria.models.Cliente;
 import br.ufpb.concessionaria.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
@@ -15,38 +16,44 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
     }
 
-    public Cliente createCliente(Cliente cliente){
+    public Cliente createCliente(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
-    public List<Cliente> listCliente(){
+    public List<Cliente> listCliente() {
         return clienteRepository.findAll();
     }
 
-    public Cliente getCliente(Long clienteId){
+    public Cliente getCliente(Long clienteId) {
         Optional<Cliente> optionalCliente = clienteRepository.findById(clienteId);
-        if (optionalCliente.isPresent()){
+        if (optionalCliente.isPresent()) {
             return clienteRepository.getReferenceById(clienteId);
+        } else {
+            throw new ItemNotFoundException("Cliente " + clienteId + " Não existe!");
         }
-        return null;
     }
-    public Cliente updateCliente(Long clienteId, Cliente cliente){
+
+    public Cliente updateCliente(Long clienteId, Cliente cliente) {
         Optional<Cliente> optionalCliente = clienteRepository.findById(clienteId);
-        if (optionalCliente.isPresent()){
+        if (optionalCliente.isPresent()) {
             Cliente toUpdate = optionalCliente.get();
             toUpdate.setNome(cliente.getNome());
             toUpdate.setCpf(cliente.getCpf());
             toUpdate.setEmail(cliente.getEmail());
             toUpdate.setCnh(cliente.getCnh());
             return toUpdate;
+        } else {
+            throw new ItemNotFoundException("Cliente " + clienteId + " Não existe!");
         }
-        return null;
     }
 
-    public void deleteCliente(Long clienteId){
+    public void deleteCliente(Long clienteId) {
         Optional<Cliente> optionalCliente = clienteRepository.findById(clienteId);
-        if (optionalCliente.isPresent()){
+        if (optionalCliente.isPresent()) {
             clienteRepository.deleteById(clienteId);
+        }
+        else {
+            throw new ItemNotFoundException("Cliente " + clienteId + " Não existe!");
         }
     }
 }
