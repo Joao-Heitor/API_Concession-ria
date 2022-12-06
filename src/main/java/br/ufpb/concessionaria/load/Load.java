@@ -1,8 +1,8 @@
 package br.ufpb.concessionaria.load;
 
-import br.ufpb.concessionaria.models.Usuario;
-import br.ufpb.concessionaria.models.Vendedor;
+import br.ufpb.concessionaria.models.*;
 
+import br.ufpb.concessionaria.repository.ClienteRepository;
 import br.ufpb.concessionaria.repository.VeiculoRepository;
 import br.ufpb.concessionaria.repository.VendaRepository;
 import br.ufpb.concessionaria.repository.VendedorRepository;
@@ -17,71 +17,65 @@ public class Load {
     VendaRepository vendaRepository;
 
     VendedorRepository vendedorRepository;
+    ClienteRepository clienteRepository;
 
 
 
     public void carregarCliente(){
         Usuario usuario = new Usuario();
+        Cliente cliente = new Cliente();
 
-        cliente.setNome("Exemplo da Silva");
+        usuario.setNome("Exemplo da Silva");
         usuario.setCpf("399-498-628-39");
         usuario.setEmail("exemplo@gmail.com");
-        usuario.setCnh("Nome");
-        usuario.setSenha("123");
-        usuario.setTelefone("(83) 9 1234-1234");
-
-        usuarioRepository.save(usuario);
+        cliente.setCnh("0123456789");
+        clienteRepository.save(cliente);
 
     }
 
-    public void carregarMedico(){
-        Medico medico = new Medico();
+    public void carregarVendedor(){
+        Usuario usuario = new Usuario();
+        Vendedor vendedor = new Vendedor();
 
-        medico.setCargo("teste");
-        medico.setCrm("123.123.123.123");
-        medico.setName("Carlos");
-
-        medicoRepository.save(medico);
-    }
-
-    public void carregarConsulta(){
-        Consulta consulta = new Consulta();
-
-        consulta.setObservacao("teste");
-        consulta.setStatus("Realizado");
-
-        consultaRepository.save(consulta);
-    }
-
-    public void carregarProcedimento(){
-        Procedimento procedimento = new Procedimento();
-
-        procedimento.setDescricao("teste");
-        procedimento.setNome("teste");
-        procedimento.setValor((long) 150);
-        procedimento.setTipo("Exame");
-
-        procedimentoRepository.save(procedimento);
+        usuario.setNome("Exemplo da Silva");
+        usuario.setCpf("399-498-628-39");
+        usuario.setEmail("exemplo@gmail.com");
+        vendedor.setSalario("0123456789");
+        vendedorRepository.save(vendedor);
 
     }
 
-    public void carregarOrcamento(){
-        Orcamento orcamento = new Orcamento();
+    public void carregarVeiculo(){
+        Veiculo veiculo = new Veiculo();
 
-        orcamento.setObservacao("teste");
-        orcamento.setPagamento("Cartao");
-        orcamento.setValotTotal((long) 200);
-        orcamento.setMedico("teste");
+        veiculo.setChassi("0123456789");
+        veiculo.setModelo("Etios");
+        veiculo.setNome("Exemplo da Silva");
+        veiculo.setAno("2016");
+        veiculo.setCor("Branco");
+        veiculoRepository.save(veiculo);
 
-        orcamentoRepository.save(orcamento);
     }
+
+//    public void carregarVenda(){
+//        Venda venda = new Venda();
+//
+//        clienteRepository.getReferenceById(clienteId)("0123456789");
+//        venda.setModelo("Etios");
+//        venda.setNome("Exemplo da Silva");
+//        venda.setAno("2016");
+//        venda.setCor("Branco");
+//        veiculoRepository.save(veiculo);
+//
+//    }
+
+
 
 
     public void carregar(){
-        carregarConsulta();
-        carregarMedico();
-        carregarOrcamento();
-        carregarProcedimento();
-        carregarUsuarios();
+        carregarCliente();
+        carregarVendedor();
+        carregarVeiculo();
+
     }
 }
