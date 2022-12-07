@@ -6,13 +6,17 @@ import br.ufpb.concessionaria.repository.VendedorRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 @Service
 public class LoadAdm {
     private VendedorRepository vendedorRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public LoadAdm(VendedorRepository vendedorRepository) {
+    public LoadAdm(VendedorRepository vendedorRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.vendedorRepository = vendedorRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     public void carregarADM() {
@@ -26,4 +30,8 @@ public class LoadAdm {
         vendedor.setPassword(bCryptPasswordEncoder.encode("admin123"));
         vendedorRepository.save(vendedor);
     }
+    public Vendedor getADM(){
+        return vendedorRepository.findByUsername("admin");
+    }
+
 }
