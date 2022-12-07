@@ -47,6 +47,7 @@ Requisições para a API devem seguir os padrões:
 | `401` | Dados de acesso inválidos.|
 | `404` | Registro pesquisado não encontrado (Not found).|
 
+### Rotas públicas
 #### Controller Load
 * GET: /load/adm
     ```
@@ -59,7 +60,19 @@ Requisições para a API devem seguir os padrões:
     ```
     Cria dados de todos os models para teste.
     ```
-
+* POST: /api/login
+    ```
+      {
+        "username": "", 
+        "password": ""
+      }
+    ```
+### Rotas privadas
+  * header para todos
+```
+  Authorization | Beares <TOKENJWT>
+```
+    
 #### Controller Cliente
 
 * POST: /api/cliente

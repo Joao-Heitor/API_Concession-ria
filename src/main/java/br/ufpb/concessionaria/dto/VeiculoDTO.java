@@ -1,5 +1,9 @@
 package br.ufpb.concessionaria.dto;
 
+import br.ufpb.concessionaria.validation.CoresVeiculos;
+import br.ufpb.concessionaria.validation.ModelosVeiculos;
+import br.ufpb.concessionaria.validation.NomeVeiculos;
+
 import javax.validation.constraints.NotBlank;
 
 public class VeiculoDTO {
@@ -7,12 +11,15 @@ public class VeiculoDTO {
     @NotBlank(message = "Chassi é obrigatório")
     private String chassi;
     @NotBlank(message = "Modelo é obrigatório")
+    @ModelosVeiculos(message = "Modelo indisponível")
     private String modelo;
     @NotBlank(message = "Nome é obrigatório")
+    @NomeVeiculos(message = "Nome indisponível")
     private String nome;
     @NotBlank(message = "Ano é obrigatório")
     private String ano;
     @NotBlank(message = "Cor é obrigatório")
+    @CoresVeiculos(message = "Cor indisponível")
     private String cor;
 
     public VeiculoDTO() {
