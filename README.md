@@ -59,11 +59,10 @@ Requisições para a API devem seguir os padrões:
         "cnh": "9323956999"
       },
       { 
-        "id": "",
-        "nome": "",
-        "cpf": "",
-        "email": "",
-        "cnh": ""
+        "nome": "Luiz da Silva",
+        "cpf": "399-498-628-39",
+        "email": "Luiz@gmail.com",
+        "cnh": "9323956999"
       }]
     ```
 * GET: /load"
