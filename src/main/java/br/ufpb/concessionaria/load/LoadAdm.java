@@ -31,6 +31,7 @@ public class LoadAdm {
         vendedorRepository.save(vendedor);
     }
     public Vendedor getADM(){
+        System.out.println("Username(\"admin\")  Password(\"admin123\")");
         return vendedorRepository.findByUsername("admin");
     }
 
