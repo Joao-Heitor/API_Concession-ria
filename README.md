@@ -51,7 +51,7 @@ Requisições para a API devem seguir os padrões:
 * GET: /load/adm
     ```
       {
-        "username": "admin",
+        "username": "admin", 
         "password": "admin123"
       }
     ```
