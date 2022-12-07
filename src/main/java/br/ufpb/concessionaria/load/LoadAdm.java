@@ -1,13 +1,9 @@
 package br.ufpb.concessionaria.load;
 
 import br.ufpb.concessionaria.models.Vendedor;
-import br.ufpb.concessionaria.repository.ClienteRepository;
 import br.ufpb.concessionaria.repository.VendedorRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.swing.text.html.Option;
-import java.util.Optional;
 
 @Service
 public class LoadAdm {
