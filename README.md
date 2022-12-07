@@ -74,6 +74,7 @@ Requisições para a API devem seguir os padrões:
 
 * GET: /api/clientes
   * Resposta:
+  
     ```
       [{
         "id": "",
@@ -333,7 +334,7 @@ Requisições para a API devem seguir os padrões:
       "cor": ""
     }
     ```
-
+    
 
 #### Controller Venda
   * POST: api/venda/vendedor/{vendedorId}/cliente/{clienteId}/veiculo/{veiculoId}
@@ -402,7 +403,7 @@ Requisições para a API devem seguir os padrões:
   ```
 * DELETE: api/venda/{vendaId}
   * Envio:
-  ```
+   ```
   {
     "vendaId": "",
     "veiculoId": "",

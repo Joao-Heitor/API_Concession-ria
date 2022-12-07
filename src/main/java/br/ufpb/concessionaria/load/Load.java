@@ -69,22 +69,37 @@ public class Load {
         vendedor.setCpf("943-317-973-37");
         vendedor.setEmail("januario@gmail.com");
         vendedor.setSalario("7349831604");
+        vendedor.setUsername("user1");
+        vendedor.setPassword("123");
+
         vendedor2.setNome("Kevin Freire");
         vendedor2.setCpf("768-197-376-76");
         vendedor2.setEmail("kevin@gmail.com");
         vendedor2.setSalario("7349700197");
+        vendedor.setUsername("user");
+        vendedor.setPassword("123");
+
         vendedor3.setNome("Julio Paulo");
         vendedor3.setCpf("221-976-379-77");
         vendedor3.setEmail("julio@gmail.com");
         vendedor3.setSalario("4337946834");
+        vendedor.setUsername("user3");
+        vendedor.setPassword("123");
+
         vendedor4.setNome("Raul Alburquerque");
         vendedor4.setCpf("943-649-777-666");
         vendedor4.setEmail("raul@gmail.com");
         vendedor4.setSalario("9731887694");
+        vendedor.setUsername("user4");
+        vendedor.setPassword("123");
+
         vendedor5.setNome("Tiago Beltrão");
         vendedor5.setCpf("734-493-197-99");
         vendedor5.setEmail("tiago@gmail.com");
         vendedor5.setSalario("0055937834");
+        vendedor.setUsername("user5");
+        vendedor.setPassword("123");
+
         vendedorRepository.save(vendedor);
         vendedorRepository.save(vendedor2);
         vendedorRepository.save(vendedor3);
