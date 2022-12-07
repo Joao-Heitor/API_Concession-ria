@@ -18,12 +18,12 @@ public class LoadController {
         this.loadAdm = loadAdm;
     }
 
-    @GetMapping("/ADM")
+    @GetMapping("/adm")
     public Vendedor carregarADM(){
         loadAdm.carregarADM();
         return loadAdm.getADM();
     }
-    @GetMapping("/Dados")
+    @GetMapping("/dados")
     public void carregar() {
         load.carregarCliente();
         load.carregarVendedor();

@@ -14,7 +14,9 @@ public class Load {
     VendedorRepository vendedorRepository;
     ClienteRepository clienteRepository;
 
-    public Load(ClienteRepository clienteRepository) {
+    public Load(VeiculoRepository veiculoRepository, VendedorRepository vendedorRepository, ClienteRepository clienteRepository) {
+        this.veiculoRepository = veiculoRepository;
+        this.vendedorRepository = vendedorRepository;
         this.clienteRepository = clienteRepository;
     }
 
@@ -29,6 +31,7 @@ public class Load {
         cliente.setCpf("399-498-628-39");
         cliente.setEmail("Luiz@gmail.com");
         cliente.setCnh("9323956999");
+
         cliente2.setNome("Carlos Alberto");
         cliente2.setCpf("976-947-673-10");
         cliente2.setEmail("carlos@gmail.com");
