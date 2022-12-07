@@ -97,14 +97,14 @@ public class Load {
         vendedor4.setCpf("943-649-777-666");
         vendedor4.setEmail("raul@gmail.com");
         vendedor4.setSalario("9731887694");
-        vendedor.setUsername("user4");
+        vendedor4.setUsername("user4");
         vendedor4.setPassword(bCryptPasswordEncoder.encode("123"));
 
         vendedor5.setNome("Tiago Beltrão");
         vendedor5.setCpf("734-493-197-99");
         vendedor5.setEmail("tiago@gmail.com");
         vendedor5.setSalario("0055937834");
-        vendedor.setUsername("user5");
+        vendedor5.setUsername("user5");
         vendedor5.setPassword(bCryptPasswordEncoder.encode("123"));
 
         vendedorRepository.save(vendedor);
