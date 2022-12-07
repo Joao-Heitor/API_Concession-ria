@@ -48,33 +48,16 @@ Requisições para a API devem seguir os padrões:
 | `404` | Registro pesquisado não encontrado (Not found).|
 
 #### Controller Load
-* GET: /load
-  * Resposta:
-
+* GET: /load/adm
     ```
-      [{
-        "nome": "Luiz da Silva",
-        "cpf": "399-498-628-39",
-        "email": "Luiz@gmail.com",
-        "cnh": "9323956999"
-      },
-      { 
-        "nome": "Luiz da Silva",
-        "cpf": "399-498-628-39",
-        "email": "Luiz@gmail.com",
-        "cnh": "9323956999"
-      }]
+      {
+        "username": "admin", 
+        "password": "admin123"
+      }
     ```
-* GET: /load"
-  * Resposta:
+* GET: /load/dados"
     ```
-    {
-      "id": "",
-      "nome": "",
-      "cpf": "",
-      "email":"",
-      "cnh": ""
-    }
+    Cria dados de todos os models para teste.
     ```
 
 #### Controller Cliente

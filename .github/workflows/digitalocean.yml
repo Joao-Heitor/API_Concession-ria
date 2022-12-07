@@ -51,4 +51,4 @@ jobs:
             docker run -d --rm --net app-net  -e POSTGRES_USER=${{ secrets.DB_USERNAME }} -e POSTGRES_PASSWORD=${{ secrets.DB_PASSWORD }} -e POSTGRES_DB=concessionariadb --name db postgres:13.1-alpine          
             
             #Start application
-            docker run --rm --net app-net -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/todolistdb -e SPRING_DATASOURCE_PASSWORD=${{ secrets.DB_PASSWORD }} -e SPRING_DATASOURCE_USERNAME=${{ secrets.DB_USERNAME }} -e SPRING_JPA_HIBERNATE_DDL_AUTO=update --name app -d registry.digitalocean.com/containerpf/api_concessionaria:latest
+            docker run --rm --net app-net -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/concessionariadb -e SPRING_DATASOURCE_PASSWORD=${{ secrets.DB_PASSWORD }} -e SPRING_DATASOURCE_USERNAME=${{ secrets.DB_USERNAME }} -e SPRING_JPA_HIBERNATE_DDL_AUTO=update --name app -d registry.digitalocean.com/containerpf/api_concessionaria:latest
