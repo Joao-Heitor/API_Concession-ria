@@ -47,6 +47,37 @@ Requisições para a API devem seguir os padrões:
 | `401` | Dados de acesso inválidos.|
 | `404` | Registro pesquisado não encontrado (Not found).|
 
+#### Controller Load
+* GET: /load
+  * Resposta:
+
+    ```
+      [{
+        "nome": "Luiz da Silva",
+        "cpf": "399-498-628-39",
+        "email": "Luiz@gmail.com",
+        "cnh": "9323956999"
+      },
+      { 
+        "id": "",
+        "nome": "",
+        "cpf": "",
+        "email": "",
+        "cnh": ""
+      }]
+    ```
+* GET: /load"
+  * Resposta:
+    ```
+    {
+      "id": "",
+      "nome": "",
+      "cpf": "",
+      "email":"",
+      "cnh": ""
+    }
+    ```
+
 #### Controller Cliente
 
 * POST: /api/cliente

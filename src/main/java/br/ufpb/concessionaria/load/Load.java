@@ -36,14 +36,17 @@ public class Load {
         cliente2.setCpf("976-947-673-10");
         cliente2.setEmail("carlos@gmail.com");
         cliente2.setCnh("0197643904");
+
         cliente3.setNome("Roberto Palmeira");
         cliente3.setCpf("672-637-974-37");
         cliente3.setEmail("roberto@gmail.com");
         cliente3.setCnh("7964380193");
+
         cliente4.setNome("André Vargas");
         cliente4.setCpf("319-439-193-88");
         cliente4.setEmail("andre@gmail.com");
         cliente4.setCnh("9734601437");
+
         cliente5.setNome("José Clemente");
         cliente5.setCpf("932-246-763-11");
         cliente5.setEmail("jose@gmail.com");
