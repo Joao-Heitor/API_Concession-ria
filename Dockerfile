@@ -1,4 +1,4 @@
-FROM adoptopenjdk/maven-openjdk13
+FROM adoptopenjdk/maven-openjdk8
 MAINTAINER joao.lopes@dcx.ufpb.br
 
 ARG JAR_FILE=target/*.jar
